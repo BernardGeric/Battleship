@@ -32,6 +32,9 @@ def get_computer_guess(guesses):
             return guess
 
 def play_battleship():
+    # Get player's name
+    player_name = input("Enter your name: ")
+
     # Initialize boards
     player_board = [["." for _ in range(6)] for _ in range(6)]
     computer_board = [["." for _ in range(6)] for _ in range(6)]
@@ -44,11 +47,11 @@ def play_battleship():
     computer_guesses = set()
     player_score, computer_score = 0, 0
 
-    print("Welcome to Battleship! Here is your board:")
+    print(f"Welcome to Battleship, {player_name}! Here is your board:")
     print_board(player_board)
 
     while player_score < 5 and computer_score < 5:
-        print("\nYour turn:")
+        print(f"\n{player_name}'s turn:")
         while True:
             player_guess = get_player_guess()
             if is_valid_guess(player_guess, player_guesses):
@@ -75,12 +78,12 @@ def play_battleship():
             print("Computer missed.")
 
         print("\nScores:")
-        print(f"You: {player_score} | Computer: {computer_score}")
+        print(f"{player_name}: {player_score} | Computer: {computer_score}")
 
     if player_score == 5:
-        print("Congratulations! You win!")
+        print(f"Congratulations, {player_name}! You win!")
     else:
-        print("The computer wins. Better luck next time!")
+        print(f"The computer wins. Better luck next time, {player_name}!")
 
 if __name__ == "__main__":
     play_battleship()
