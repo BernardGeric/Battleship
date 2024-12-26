@@ -50,4 +50,14 @@ def play_battleship():
     print(f"Welcome to Battleship, {player_name}! Here is your board:")
     print_board(player_board)
 
-   
+    while player_score < 5 and computer_score < 5:
+        print(f"\n{player_name}'s turn:")
+        while True:
+            player_guess = get_player_guess()
+            if is_valid_guess(player_guess, player_guesses):
+                player_guesses.add(player_guess)
+                break
+            else:
+                print("Invalid guess. Try again.")
+
+     
