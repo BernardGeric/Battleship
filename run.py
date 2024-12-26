@@ -77,5 +77,14 @@ def play_battleship():
             else:
             print("Computer missed.")
 
-       
+ print("\nScores:")
+        print(f"{player_name}: {player_score} | Computer: {computer_score}")
+
+    if player_score == 5:
+        print(f"Congratulations, {player_name}! You win!")
+    else:
+        print(f"The computer wins. Better luck next time, {player_name}!")
+
+if __name__ == "__main__":
+    play_battleship()       
     
