@@ -63,7 +63,7 @@ def play_battleship():
         if computer_board[player_guess[0]][player_guess[1]] == "X":
             print("You got a hit!")
             player_score += 1
-            else:
+        else:
             print("You missed.")
 
         print("\nComputer's turn:")
@@ -74,10 +74,10 @@ def play_battleship():
         if player_board[computer_guess[0]][computer_guess[1]] == "X":
             print("Computer got a hit!")
             computer_score += 1
-            else:
+        else:
             print("Computer missed.")
 
- print("\nScores:")
+        print("\nScores:")
         print(f"{player_name}: {player_score} | Computer: {computer_score}")
 
     if player_score == 5:
@@ -86,5 +86,6 @@ def play_battleship():
         print(f"The computer wins. Better luck next time, {player_name}!")
 
 if __name__ == "__main__":
-    play_battleship()       
+    play_battleship()
+     
     
