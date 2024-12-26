@@ -60,4 +60,22 @@ def play_battleship():
             else:
                 print("Invalid guess. Try again.")
 
-     
+        if computer_board[player_guess[0]][player_guess[1]] == "X":
+            print("You got a hit!")
+            player_score += 1
+            else:
+            print("You missed.")
+
+        print("\nComputer's turn:")
+        computer_guess = get_computer_guess(computer_guesses)
+        computer_guesses.add(computer_guess)
+        print(f"Computer guessed: {computer_guess}")
+
+        if player_board[computer_guess[0]][computer_guess[1]] == "X":
+            print("Computer got a hit!")
+            computer_score += 1
+            else:
+            print("Computer missed.")
+
+       
+    
