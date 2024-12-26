@@ -31,3 +31,8 @@ def get_computer_guess(guesses):
         if guess not in guesses:
             return guess
 
+def play_battleship():
+    # Get player's name
+    player_name = input("Enter your name: ")
+
+
