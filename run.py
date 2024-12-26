@@ -13,3 +13,21 @@ def place_ships(board, ship_count):
                 board[row][col] = "X"
                 break
 
+def is_valid_guess(guess, guesses):
+    return 0 <= guess[0] < 6 and 0 <= guess[1] < 6 and guess not in guesses
+
+def get_player_guess():
+    while True:
+        try:
+            row = int(input("Guess a row (0-5): "))
+            col = int(input("Guess a column (0-5): "))
+            return (row, col)
+        except ValueError:
+            print("Invalid input. Please enter numbers between 0 and 5.")
+
+def get_computer_guess(guesses):
+    while True:
+        guess = (random.randint(0, 5), random.randint(0, 5))
+        if guess not in guesses:
+            return guess
+
