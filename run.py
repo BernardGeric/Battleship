@@ -35,4 +35,19 @@ def play_battleship():
     # Get player's name
     player_name = input("Enter your name: ")
 
+    # Initialize boards
+    player_board = [["." for _ in range(6)] for _ in range(6)]
+    computer_board = [["." for _ in range(6)] for _ in range(6)]
 
+    # Place ships (5 each)
+    place_ships(player_board, 5)
+    place_ships(computer_board, 5)
+
+    player_guesses = set()
+    computer_guesses = set()
+    player_score, computer_score = 0, 0
+
+    print(f"Welcome to Battleship, {player_name}! Here is your board:")
+    print_board(player_board)
+
+   
